@@ -2,9 +2,18 @@ from rest_framework import serializers
 from .models import User, Team, Activity, Workout, Leaderboard
 
 class TeamSerializer(serializers.ModelSerializer):
+    members = serializers.SerializerMethodField()
+    members_count = serializers.SerializerMethodField()
+    
     class Meta:
         model = Team
-        fields = '__all__'
+        fields = ['id', 'name', 'description', 'members', 'members_count']
+    
+    def get_members(self, obj):
+        return [{'id': member.id, 'name': member.name, 'email': member.email} for member in obj.members.all()]
+    
+    def get_members_count(self, obj):
+        return obj.members.count()
 
 class UserSerializer(serializers.ModelSerializer):
     team = TeamSerializer(read_only=True)
