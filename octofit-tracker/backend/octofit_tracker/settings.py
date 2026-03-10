@@ -81,8 +81,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'octofit_tracker.wsgi.application'
-
-
+ASGI_APPLICATION = 'octofit_tracker.asgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
