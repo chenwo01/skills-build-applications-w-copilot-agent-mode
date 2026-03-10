@@ -1,0 +1,112 @@
+.app-shell {
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #e0f2ff 0%, transparent 45%),
+    radial-gradient(circle at bottom right, #ffe7cc 0%, transparent 40%),
+    linear-gradient(180deg, #f6fbff 0%, #f9fafb 55%, #ffffff 100%);
+  color: #1f2f3d;
+}
+
+.navbar {
+  background: linear-gradient(90deg, #0d5ea6 0%, #1a78c2 100%) !important;
+}
+
+.app-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(9, 43, 74, 0.25);
+}
+
+.nav-pill-link {
+  border-radius: 999px;
+  padding: 0.4rem 0.95rem;
+  transition: all 0.2s ease;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.nav-pill-link.active {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.nav-pill-link:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+  color: #ffffff !important;
+}
+
+h1,
+h2,
+.h4,
+.h5 {
+  color: #0d3a62;
+}
+
+p,
+.text-secondary {
+  color: #35506a !important;
+}
+
+a,
+.link-primary {
+  color: #0d64c4 !important;
+}
+
+a:hover,
+.link-primary:hover {
+  color: #0a4f9b !important;
+}
+
+.card {
+  border-radius: 0.9rem;
+  border: 1px solid #d8e4f1;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.table thead th {
+  white-space: nowrap;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #0f3f6c;
+  background-color: #eaf4ff;
+}
+
+.table tbody tr:nth-of-type(odd) > * {
+  background-color: #f7fbff;
+}
+
+.table tbody tr:hover > * {
+  background-color: #e8f2ff;
+}
+
+.btn-primary {
+  background-color: #0d66c2;
+  border-color: #0d66c2;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #0a539d;
+  border-color: #0a539d;
+}
+
+.btn-outline-primary {
+  color: #0d66c2;
+  border-color: #0d66c2;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  color: #fff;
+  background-color: #0d66c2;
+  border-color: #0d66c2;
+}
+
+.modal pre {
+  background: #f3f8fe;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  max-height: 52vh;
+  overflow: auto;
+}
