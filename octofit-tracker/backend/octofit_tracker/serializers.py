@@ -22,8 +22,13 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ['id', 'email', 'name', 'team', 'team_id', 'is_superhero']
 
+class UserSummarySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'name', 'email']
+
 class ActivitySerializer(serializers.ModelSerializer):
-    user = UserSerializer(read_only=True)
+    user = UserSummarySerializer(read_only=True)
     user_id = serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), source='user', write_only=True)
     class Meta:
         model = Activity
