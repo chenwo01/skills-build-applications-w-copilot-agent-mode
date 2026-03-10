@@ -101,7 +101,6 @@ function ResourceTableCard({ title, endpoint, columns, sortItems }) {
   const loadItems = useCallback(async () => {
     try {
       setError('');
-      console.log(`${title} endpoint:`, endpoint);
       const response = await fetch(endpoint);
 
       if (!response.ok) {
@@ -109,7 +108,6 @@ function ResourceTableCard({ title, endpoint, columns, sortItems }) {
       }
 
       const data = await response.json();
-      console.log(`${title} data:`, data);
 
       const normalized = Array.isArray(data) ? data : data.results || [];
       setItems(normalized);
