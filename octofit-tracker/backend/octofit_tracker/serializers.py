@@ -40,14 +40,14 @@ class ActivitySerializer(serializers.ModelSerializer):
         fields = ['id', 'user', 'user_id', 'type', 'duration', 'date']
 
 class WorkoutSerializer(serializers.ModelSerializer):
-    suggested_for = TeamSerializer(many=True, read_only=True)
+    suggested_for = TeamBriefSerializer(many=True, read_only=True)
     suggested_for_ids = serializers.PrimaryKeyRelatedField(queryset=Team.objects.all(), source='suggested_for', many=True, write_only=True, required=False)
     class Meta:
         model = Workout
         fields = ['id', 'name', 'description', 'suggested_for', 'suggested_for_ids']
 
 class LeaderboardSerializer(serializers.ModelSerializer):
-    team = TeamSerializer(read_only=True)
+    team = TeamBriefSerializer(read_only=True)
     team_id = serializers.PrimaryKeyRelatedField(queryset=Team.objects.all(), source='team', write_only=True)
     class Meta:
         model = Leaderboard
