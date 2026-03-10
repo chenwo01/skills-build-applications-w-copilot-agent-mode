@@ -1,10 +1,8 @@
 import ResourceTableCard from './ResourceTableCard';
 
-const apiHost = process.env.REACT_APP_CODESPACE_NAME
-  ? `https://${process.env.REACT_APP_CODESPACE_NAME}-8000.app.github.dev`
-  : 'http://localhost:8000';
-
-const endpoint = `${apiHost}/api/activities/`;
+const endpoint = process.env.REACT_APP_CODESPACE_NAME
+  ? `https://${process.env.REACT_APP_CODESPACE_NAME}-8000.app.github.dev/api/activities/`
+  : 'http://localhost:8000/api/activities/';
 
 function Activities() {
   return (
